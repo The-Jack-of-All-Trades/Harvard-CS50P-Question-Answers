@@ -1,2 +1,2 @@
-word = input("").lower()
-print(word)
+phrase = input().lower()
+print(phrase)
