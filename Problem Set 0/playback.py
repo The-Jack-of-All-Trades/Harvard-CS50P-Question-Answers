@@ -1,2 +1,2 @@
-output = input().replace(" ", "...")
-print(output)
+phrase = input().replace(" ", "...")
+print(phrase)
