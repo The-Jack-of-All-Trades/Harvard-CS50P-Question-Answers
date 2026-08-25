@@ -7,36 +7,32 @@ def main():
 
 
 def is_valid(s):
-    if 2 <= len(s) <= 6:
-        pass
-    else:
+    if len(s) < 2:
+        return False
+    elif len(s) > 6:
         return False
 
-    if s[0].isalpha() and s[1].isalpha():
-        pass
-    elif s[0].isdigit() or s[1].isdigit():
+    if not s[0:2].isalpha():
         return False
 
     for symbol in s:
-        if symbol.isdigit() == False and symbol.isalpha() == False:
+        if symbol.isalpha() or symbol.isdigit():
+            continue
+        else:
             return False
 
+    is_number = False
     for symbol in s:
-        if symbol.isdigit() and symbol != "0":
-            break
-        elif symbol == "0":
+        if symbol == "0" and is_number == False:
             return False
-
-    number_started = False
-
-    for symbol in s:
         if symbol.isdigit():
-            number_started = True
-        if number_started == True and symbol.isalpha():
+            is_number = True
+        if is_number == True and symbol.isalpha():
             return False
 
+    else:
+        return True
     
-    return True
-
+        
 
 main()
