@@ -21,8 +21,11 @@ while True:
             month = int(date[0])
             day = int(date[1])
             year = int(date[2])
-            if 31 >= day > 0 and 12 >= month > 0:
-                break
+            if 0 < day <= 31:
+                if 12 >= month > 0:
+                    break
+                else:
+                    continue   
             else:
                 continue
         elif "," in date:
@@ -30,16 +33,19 @@ while True:
             month = date[0]
             day = int(date[1])
             year = int(date[2])
+            total = 0
             if month not in months:
                 continue
-            month_count = 0
             for themonth in months:
-                month_count += 1
-                if month == themonth:
-                    month = month_count
+                total += 1
+                if themonth == month:
+                    month = total
                     break
-            if 31 >= day > 0 and 12 >= month > 0:
-                break
+            if 0 < day <= 31:
+                if 12 >= month > 0:
+                    break
+                else:
+                    continue
             else:
                 continue
         else:
