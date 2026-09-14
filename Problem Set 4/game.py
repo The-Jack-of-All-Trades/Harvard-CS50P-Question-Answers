@@ -37,5 +37,6 @@ def guess(secret_number):
 def main():
     secret_number = levels()
     guess(secret_number)
-
-main()
+    
+if __name__ == "__main__":
+    main()
