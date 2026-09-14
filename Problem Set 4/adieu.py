@@ -4,7 +4,7 @@ names = []
 def nameprint(names):
     total = 0
 
-    print("\nAdieu, adiue, to", end="")
+    print("\nAdieu, adieu, to", end="")
     for thenames in names:
         total += 1
         if total != len(names):
@@ -25,5 +25,5 @@ while True:
         names.append(name)
     except EOFError:
         break
-
-ending(names)
+if __name__ == "__main__":
+    ending(names)
