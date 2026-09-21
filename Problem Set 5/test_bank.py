@@ -1,4 +1,4 @@
-from cs50p import value
+from bank import value
 
 def test_symbols():
     assert value("hiya folks!!!") == "$20"
